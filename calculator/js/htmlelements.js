@@ -85,6 +85,13 @@ let calculatorFooterButtonElement14 = document.createElement('div');
 calculatorFooterButtonElement14.className = "calculator-footer__button";
 let calculatorFooterButtonElement15 = document.createElement('div');
 calculatorFooterButtonElement15.className = "calculator-footer__button";
+let calculatorFooterButtonElement16 = document.createElement('div');
+calculatorFooterButtonElement16.className = "calculator-footer__button";
+let calculatorFooterButtonElement17 = document.createElement('div');
+calculatorFooterButtonElement17.className = "calculator-footer__button";
+let calculatorFooterButtonElement18 = document.createElement('div');
+calculatorFooterButtonElement18.className = "calculator-footer__button", "calculator-footer__button--double";
+
 
 //div calculator-footer__button button
 let calculatorFooterActualButtonElement = document.createElement('button');
@@ -103,6 +110,9 @@ let calculatorFooterActualButtonElement12 = document.createElement('button');
 let calculatorFooterActualButtonElement13 = document.createElement('button');
 let calculatorFooterActualButtonElement14 = document.createElement('button');
 let calculatorFooterActualButtonElement15 = document.createElement('button');
+let calculatorFooterActualButtonElement16 = document.createElement('button');
+let calculatorFooterActualButtonElement17 = document.createElement('button');
+let calculatorFooterActualButtonElement18 = document.createElement('button');
 
 
 
@@ -113,7 +123,8 @@ console.log(headerElement, headerHeading, sectionElement, containerElement, calc
     calculatorFooterButtonElement, calculatorFooterActualButtonElement, calculatorFooterActualButtonElement1, calculatorFooterActualButtonElement2, calculatorFooterActualButtonElement3, 
     calculatorFooterActualButtonElement4, calculatorFooterActualButtonElement5, calculatorFooterActualButtonElement6, calculatorFooterActualButtonElement7, calculatorFooterActualButtonElement8,
     calculatorFooterActualButtonElement9, calculatorFooterActualButtonElement10, calculatorFooterActualButtonElement11, calculatorFooterActualButtonElement12,
-    calculatorFooterActualButtonElement13, calculatorFooterActualButtonElement14, calculatorFooterActualButtonElement15 );
+    calculatorFooterActualButtonElement13, calculatorFooterActualButtonElement14, calculatorFooterActualButtonElement15, calculatorFooterActualButtonElement16, calculatorFooterActualButtonElement17,
+    calculatorFooterActualButtonElement18 );
 
 
     bodyElement.append(headerElement, sectionElement);
@@ -132,7 +143,7 @@ console.log(headerElement, headerHeading, sectionElement, containerElement, calc
         calculatorFooterButtonElement3, calculatorFooterButtonElement4, calculatorFooterButtonElement5, calculatorFooterButtonElement6,
         calculatorFooterButtonElement7, calculatorFooterButtonElement8, calculatorFooterButtonElement9, calculatorFooterButtonElement10,
         calculatorFooterButtonElement11, calculatorFooterButtonElement12, calculatorFooterButtonElement13, calculatorFooterButtonElement14,
-        calculatorFooterButtonElement15);
+        calculatorFooterButtonElement15, calculatorFooterButtonElement16, calculatorFooterButtonElement17, calculatorFooterButtonElement18);
     calculatorFooterButtonElement.appendChild(calculatorFooterActualButtonElement);
     calculatorFooterButtonElement1.appendChild(calculatorFooterActualButtonElement1);
     calculatorFooterButtonElement2.appendChild(calculatorFooterActualButtonElement2);
@@ -149,6 +160,9 @@ console.log(headerElement, headerHeading, sectionElement, containerElement, calc
     calculatorFooterButtonElement13.appendChild(calculatorFooterActualButtonElement13);
     calculatorFooterButtonElement14.appendChild(calculatorFooterActualButtonElement14);
     calculatorFooterButtonElement15.appendChild(calculatorFooterActualButtonElement15);
+    calculatorFooterButtonElement16.appendChild(calculatorFooterActualButtonElement16);
+    calculatorFooterButtonElement17.appendChild(calculatorFooterActualButtonElement17);
+    calculatorFooterButtonElement18.appendChild(calculatorFooterActualButtonElement18);
     calculatorFooterActualButtonElement.textContent="7";
     calculatorFooterActualButtonElement1.textContent="8";
     calculatorFooterActualButtonElement2.textContent="9";
@@ -163,6 +177,9 @@ console.log(headerElement, headerHeading, sectionElement, containerElement, calc
     calculatorFooterActualButtonElement11.textContent="+";
     calculatorFooterActualButtonElement12.textContent="0";
     calculatorFooterActualButtonElement13.textContent=".";
-    calculatorFooterActualButtonElement14.textContent="=";
+    calculatorFooterActualButtonElement14.textContent="DEL";
     calculatorFooterActualButtonElement15.textContent="-";
+    calculatorFooterActualButtonElement16.textContent="AC";
+    calculatorFooterActualButtonElement17.textContent="CE";
+    calculatorFooterActualButtonElement18.textContent="=";
 
