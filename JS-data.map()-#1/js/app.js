@@ -52,7 +52,11 @@ const cardBody = document.querySelector('#contact-card');
 
 //map function, that goes trought contactCardData array
 let contactCardDetails = contactCardData.map(function(itemData){ //itemData can be any name
-    return '<div>' + 'Name: ' + itemData.name +  '<br> Age: '  + itemData.age + '<br> Number: ' + itemData.contact + '</div>';
+    return '<div class="shadow">' + 
+    '<h1>' + 'Name: ' + itemData.name + '</h1>' +  
+    '<h2>' + 'Age: '  + itemData.age + '</h2>' + 
+    '<h3>' + 'Number: ' + itemData.contact + '</h3>' +
+    '</div>';
     
 });
 
