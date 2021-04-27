@@ -100,3 +100,13 @@ let calculatorButtonsInfo = calculatorButtonData.map(function(buttonData){
 
 
     calculatorButtons.innerHTML = calculatorButtonsInfo.join('\n');
+
+
+// I have added CSS class to a button with the value '='    
+let  buttonClass = calculatorButtons.children;
+for (i = 0; i < buttonClass.length; i++) {
+  if (buttonClass[i].innerText.trim() === "=") {
+    console.log("Found it")
+    buttonClass[i].classList.add("calculator-footer__button--double");
+  }
+}
