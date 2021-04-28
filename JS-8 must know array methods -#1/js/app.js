@@ -31,3 +31,11 @@ const filteredCards = cards.filter(card => card.number).map(card => {
     return '<div class="card">' + '<span>' + card.symbol + '<span>' + '</div>';
 })
 cardsContainerFilter.innerHTML = filteredCards.join('\n');
+
+
+//.FIND METHOD
+const cardsContainerFind = document.querySelector('#find-method');
+const findCards = cards.filter(card => card.symbol ==='7' ).map(card => {
+  return '<div class="card">' + '<span>' + card.symbol + '<span>' + '</div>';
+})
+cardsContainerFind.innerHTML = findCards.join('\n');
