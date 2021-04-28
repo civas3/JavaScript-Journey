@@ -24,3 +24,10 @@ const originalCards = cards.map(card => {
 cardsContainerOriginal.innerHTML = originalCards.join('\n');
 
 
+
+//.FILTER METHOD + .MAP
+const cardsContainerFilter = document.querySelector('#filter-method');
+const filteredCards = cards.filter(card => card.number).map(card => {
+    return '<div class="card">' + '<span>' + card.symbol + '<span>' + '</div>';
+})
+cardsContainerFilter.innerHTML = filteredCards.join('\n');
