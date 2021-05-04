@@ -24,6 +24,12 @@ calculatorHeaderElement.className = "calculator-header";
 let calculatorHeaderScreenElement = document.createElement('div');
 calculatorHeaderScreenElement.className = "calculator-header__screen";
 
+let calculatorHeaderScreenpreviousElement = document.createElement('div');
+calculatorHeaderScreenpreviousElement.className = "previous-operand";
+
+let calculatorHeaderScreenCurrentElement = document.createElement('div');
+calculatorHeaderScreenCurrentElement.className = "current-operand";
+
 //div calculator-body
 let calculatorBodyElement = document.createElement('div');
 calculatorBodyElement.className = "calculator-body";
@@ -60,12 +66,15 @@ calculatorFooterElement.className = "calculator-footer";
      containerElement.appendChild(calculatorElement);
      calculatorElement.append(calculatorHeaderElement, calculatorBodyElement, calculatorFooterElement);
      calculatorHeaderElement.appendChild(calculatorHeaderScreenElement);
+     calculatorHeaderScreenElement.append(calculatorHeaderScreenpreviousElement, calculatorHeaderScreenCurrentElement);
+     calculatorHeaderScreenpreviousElement.setAttribute("data-previous-operand", "");
+     calculatorHeaderScreenCurrentElement.setAttribute("data-current-operand", "");
      calculatorBodyElement.append(calculatorBodyBrandElement, calculatorBodySwitchElement);
      calculatorBodyBrandElement.appendChild(calculatorBodyBrandSpanElement);
      calculatorBodyBrandSpanElement.textContent = "CASIO";
      calculatorBodySwitchElement.appendChild(calculatorBodySwitchElementSwitch);
      calculatorBodySwitchElementSwitch.append(calculatorBodySwitchInputElement, calculatorBodySwitchSpanElement);
- 
+
 
 //let calculator-footer__button data array
 let calculatorButtonData = [
@@ -147,7 +156,7 @@ buttonNumber.forEach((el) => {
   }
 });
 
-// add attribute 'data-operation' to all buttons that contain operation symbols   
+// add attribute 'data-all-clear' to a buttons that contain operation symbol AC and CE   
 const clearAllOperator = ['AC', 'CE'];
 buttonNumber.forEach((el) => {
   let button = el.querySelector('button');
