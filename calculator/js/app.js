@@ -116,16 +116,25 @@ const numberArray = ['0', '1', '2', '3', '4', '5', '6', '7', '8', '9'];
 buttonNumber.forEach((el) => {
   let button = el.querySelector('button');
   if (numberArray.includes(button.innerText.trim())) {
-    button.setAttribute('data-number', button.innerText.trim());
+    button.setAttribute('data-number', '');
   }
 });
 
 // add attribute 'data-operation' to all buttons that contain operation symbols   
-const operationArray = ['/', 'x', '+', '-'];
+const operationArray = ['/', 'X', '+', '-'];
 buttonNumber.forEach((el) => {
   let button = el.querySelector('button');
   if (operationArray.includes(button.innerText.trim())) {
-    button.setAttribute('data-operation', button.innerText.trim());
+    button.setAttribute('data-operation', '');
+  }
+});
+
+// add attribute 'data-equals' to a button that contain operation symbols =   
+const equalsOperator = '=';
+buttonNumber.forEach((el) => {
+  let button = el.querySelector('button');
+  if (equalsOperator.includes(button.innerText.trim())) {
+    button.setAttribute('data-equals', '');
   }
 });
 
