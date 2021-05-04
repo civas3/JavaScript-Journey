@@ -59,7 +59,8 @@ html {
         background-color: rgba(228, 227, 227, 0.856);
         height: 6.9rem;
         width: 90%;
-        border: black solid 0.1rem; }
+        border: black solid 0.1rem;
+        font-size: 3rem; }
         #calculator .calculator-header__screen--on {
           background-color: rgba(0, 255, 255, 0.568);
           color: black; }

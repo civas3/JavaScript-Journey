@@ -121,7 +121,7 @@ for (i = 0; i < buttonClass.length; i++) {
 // add attribute 'data-number' to all buttons that contain a number    
 let buttonNumber = calculatorFooter.querySelectorAll('.calculator-footer__button');
 
-const numberArray = ['0', '1', '2', '3', '4', '5', '6', '7', '8', '9'];
+const numberArray = ['0', '1', '2', '3', '4', '5', '6', '7', '8', '9', '.'];
 buttonNumber.forEach((el) => {
   let button = el.querySelector('button');
   if (numberArray.includes(button.innerText.trim())) {
@@ -164,6 +164,61 @@ buttonNumber.forEach((el) => {
     button.setAttribute('data-all-clear', '');
   }
 });
+
+
+
+
+
+class Calculator{
+  constructor(previousOperandTextEl, currentOperandTextEl){
+    this.previousOperandTextEl = previousOperandTextEl
+    this.currentOperandTextEl = currentOperandTextEl
+    this.clear()
+  }
+
+  clear(){
+    this.currentOperand = ''
+    this.previousOperand = ''
+    this.operation = undefined
+  }
+
+  appendNumber(number){
+    if (number === '.' && this.currentOperand.includes('.')) return
+    this.currentOperand = this.currentOperand.toString() + number.toString()
+  }
+
+  updateDisplay(){
+    this.currentOperandTextEl.innerHTML = this.currentOperand
+  }
+
+
+}
+
+
+
+
+const calculatorScreen = calculatorHeaderScreenElement;
+const previousOperandTextEl = document.querySelector('[data-previous-operand]');
+const currentOperandTextEl = document.querySelector('[data-current-operand]');
+const numberButtons = document.querySelectorAll('[data-number]');
+const operationButtons = document.querySelectorAll('[data-operation]');
+const equalButton = document.querySelector('[data-equals]');
+const deleteButton = document.querySelector('[data-delete]');
+const clearButtons = document.querySelectorAll('[data-all-clear]');
+const powerButton = calculatorBodySwitchSpanElement;
+
+console.log();
+
+
+const calculator = new Calculator(previousOperandTextEl,currentOperandTextEl)
+
+numberButtons.forEach(button => {
+  button.addEventListener('click', () =>{
+    calculator.appendNumber(button.innerText)
+    calculator.updateDisplay()
+  })
+})
+
 
 
 
