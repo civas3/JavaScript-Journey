@@ -109,8 +109,9 @@ for (i = 0; i < buttonClass.length; i++) {
 }
 
 
-//  // add attribute data-number to numbers 1-9    
+// add attribute 'data-number' to all buttons that contain a number    
 let buttonNumber = calculatorFooter.querySelectorAll('.calculator-footer__button');
+
 const numberArray = ['0', '1', '2', '3', '4', '5', '6', '7', '8', '9'];
 buttonNumber.forEach((el) => {
   let button = el.querySelector('button');
@@ -118,4 +119,15 @@ buttonNumber.forEach((el) => {
     button.setAttribute('data-number', button.innerText.trim());
   }
 });
+
+// add attribute 'data-operation' to all buttons that contain operation symbols   
+const operationArray = ['/', 'x', '+', '-'];
+buttonNumber.forEach((el) => {
+  let button = el.querySelector('button');
+  if (operationArray.includes(button.innerText.trim())) {
+    button.setAttribute('data-operation', button.innerText.trim());
+  }
+});
+
+
 
