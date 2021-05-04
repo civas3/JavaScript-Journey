@@ -91,22 +91,31 @@ let calculatorButtonData = [
 ];
 
 //all calculator-footer__button data will be stored inside .calculator-footer__button div element
-const calculatorButtons = document.querySelector('.calculator-footer');
-
+const calculatorFooter = document.querySelector('.calculator-footer');
 //map function that will scan let calculatorButtonData array
 let calculatorButtonsInfo = calculatorButtonData.map(function(buttonData){
     return   '<div class="calculator-footer__button">' + '<button>' + buttonData.symbol + '</button>' + '</div>';
 });
+calculatorFooter.innerHTML = calculatorButtonsInfo.join('\n');
 
 
-    calculatorButtons.innerHTML = calculatorButtonsInfo.join('\n');
 
-
-// I have added CSS class to a button with the value '='    
-let  buttonClass = calculatorButtons.children;
+// add CSS class to a button with the value '='    
+let  buttonClass = calculatorFooter.children;
 for (i = 0; i < buttonClass.length; i++) {
   if (buttonClass[i].innerText.trim() === "=") {
-    console.log("Found it")
     buttonClass[i].classList.add("calculator-footer__button--double");
   }
 }
+
+
+//  // add attribute data-number to numbers 1-9    
+let buttonNumber = calculatorFooter.querySelectorAll('.calculator-footer__button');
+const numberArray = ['0', '1', '2', '3', '4', '5', '6', '7', '8', '9'];
+buttonNumber.forEach((el) => {
+  let button = el.querySelector('button');
+  if (numberArray.includes(button.innerText.trim())) {
+    button.setAttribute('data-number', button.innerText.trim());
+  }
+});
+
