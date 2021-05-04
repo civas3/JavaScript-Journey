@@ -138,5 +138,25 @@ buttonNumber.forEach((el) => {
   }
 });
 
+// add attribute 'data-equals' to a button that contain operation symbols =   
+const deleteOperator = 'DEL';
+buttonNumber.forEach((el) => {
+  let button = el.querySelector('button');
+  if (deleteOperator.includes(button.innerText.trim())) {
+    button.setAttribute('data-delete', '');
+  }
+});
+
+// add attribute 'data-operation' to all buttons that contain operation symbols   
+const clearAllOperator = ['AC', 'CE'];
+buttonNumber.forEach((el) => {
+  let button = el.querySelector('button');
+  if (clearAllOperator.includes(button.innerText.trim())) {
+    button.setAttribute('data-all-clear', '');
+  }
+});
+
+
+
 
 
