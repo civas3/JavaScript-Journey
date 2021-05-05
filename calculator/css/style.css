@@ -64,7 +64,8 @@ html {
         overflow: hidden;
         display: flex;
         flex-direction: column;
-        justify-content: space-between; }
+        justify-content: space-between; 
+        align-items: flex-end;}
         #calculator .calculator-header__screen--on {
           background-color: rgba(0, 255, 255, 0.568);
           color: black; }

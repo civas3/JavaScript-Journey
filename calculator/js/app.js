@@ -192,9 +192,26 @@ class Calculator{
     this.currentOperand = this.currentOperand.toString() + number.toString()
   }
 
+
+  chooseOperation(operation){
+
+    //setting the operation so the calculator know what operation it needs to use when it computes the value
+    this.operation = operation
+    //we done typing the current number so we recycle that over this previous operand 
+    this.previousOperand = this.currentOperand
+    //and we want to clear our the new current operand
+    this.currentOperand = ''
+  }
+
+  
+
+
   //this function update the values inside the calculator screen
   updateDisplay(){
     this.currentOperandTextEl.innerHTML = this.currentOperand
+    //the current operand becomes previous operand after operation been clicked
+    this.previousOperandTextEl.innerHTML = this.previousOperand
+
   }
 
 
@@ -224,6 +241,14 @@ the button, then it will update the calculator display screen user click on the 
 numberButtons.forEach(button => {
   button.addEventListener('click', () =>{
     calculator.appendNumber(button.innerText)
+    calculator.updateDisplay()
+  })
+})
+
+//All the operation buttons to work on click, and display the calculator screen
+operationButtons.forEach(button => {
+  button.addEventListener('click', () =>{
+    calculator.chooseOperation(button.innerText)
     calculator.updateDisplay()
   })
 })
