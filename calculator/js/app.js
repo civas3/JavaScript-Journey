@@ -85,7 +85,7 @@ let calculatorButtonData = [
     {symbol: '4'},
     {symbol: '5'},
     {symbol: '6'},
-    {symbol: 'X'},
+    {symbol: '*'},
     {symbol: '1'},
     {symbol: '2'},
     {symbol: '3'},
@@ -130,7 +130,7 @@ buttonNumber.forEach((el) => {
 });
 
 // add attribute 'data-operation' to all buttons that contain operation symbols   
-const operationArray = ['/', 'X', '+', '-'];
+const operationArray = ['/', '*', '+', '-'];
 buttonNumber.forEach((el) => {
   let button = el.querySelector('button');
   if (operationArray.includes(button.innerText.trim())) {
@@ -198,14 +198,49 @@ class Calculator{
     if(this.currentOperand === '') return
     //if (checking) for automatic computation
     if(this.previousOperand !==''){
-      this.compute()
+      this.calculate()
     } 
-    //setting the operation so the calculator know what operation it needs to use when it computes the value
+    //setting the operation so the calculator know what operation it needs to use when it calculates the value
     this.operation = operation
     //we done typing the current number so we recycle that over this previous operand 
     this.previousOperand = this.currentOperand
     //and we want to clear our the new current operand
     this.currentOperand = ''
+  }
+
+
+  //
+  calculate(){
+    let calculation
+    //convetring string to a number
+    const prev = parseFloat(this.previousOperand)
+    const current = parseFloat(this.currentOperand)
+    //if the user do not enter any numbers, equal button wont execute 
+    if (isNaN(prev) || isNaN(current)) return
+    //declaring calulator if statements 
+    switch (this.operation){
+       case '+':
+         //if user clicks + oepration = previous number + this number
+        calculation = prev + current
+        //if the if statement is true , break the code and stop executing
+        break
+        case '-':
+        calculation = prev - current
+        break
+        case '*':
+        calculation = prev * current
+        break
+        case '/':
+        calculation = prev / current
+        break
+        case '+':
+          //if user dont click on any of these operation symbols dont do any calculation
+      default: 
+        return 
+    }
+    this.currentOperand = calculation
+    this.operation = undefined
+    this.previousOperand = ''
   }
 
   
@@ -256,6 +291,12 @@ operationButtons.forEach(button => {
     calculator.chooseOperation(button.innerText)
     calculator.updateDisplay()
   })
+})
+
+// = button calculate the numbers total value and displays the screen
+equalButton.addEventListener('click', button => {
+  calculator.calculate()
+  calculator.updateDisplay()
 })
 
 
