@@ -194,7 +194,12 @@ class Calculator{
 
 
   chooseOperation(operation){
-
+    //if (checking )the current operand is empty it wont lets us execute any firther into our code
+    if(this.currentOperand === '') return
+    //if (checking) for automatic computation
+    if(this.previousOperand !==''){
+      this.compute()
+    } 
     //setting the operation so the calculator know what operation it needs to use when it computes the value
     this.operation = operation
     //we done typing the current number so we recycle that over this previous operand 
