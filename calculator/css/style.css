@@ -60,7 +60,11 @@ html {
         height: 6.9rem;
         width: 90%;
         border: black solid 0.1rem;
-        font-size: 3rem; }
+        font-size: 3rem;
+        overflow: hidden;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between; }
         #calculator .calculator-header__screen--on {
           background-color: rgba(0, 255, 255, 0.568);
           color: black; }

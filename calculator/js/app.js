@@ -168,25 +168,31 @@ buttonNumber.forEach((el) => {
 
 
 
-
+//calculator class 
 class Calculator{
+  //takes all the inputs for ir as well as all functions for calculator
+  //placing our display text for calculator
   constructor(previousOperandTextEl, currentOperandTextEl){
     this.previousOperandTextEl = previousOperandTextEl
     this.currentOperandTextEl = currentOperandTextEl
     this.clear()
   }
 
+  //clear button function
   clear(){
     this.currentOperand = ''
     this.previousOperand = ''
     this.operation = undefined
   }
 
+  /*everytime user click on the number it appears on the calculator screen
+  also if statement makes sure that period can be allowed only once on the screen*/
   appendNumber(number){
     if (number === '.' && this.currentOperand.includes('.')) return
     this.currentOperand = this.currentOperand.toString() + number.toString()
   }
 
+  //this function update the values inside the calculator screen
   updateDisplay(){
     this.currentOperandTextEl.innerHTML = this.currentOperand
   }
@@ -195,8 +201,7 @@ class Calculator{
 }
 
 
-
-
+//calculator elements
 const calculatorScreen = calculatorHeaderScreenElement;
 const previousOperandTextEl = document.querySelector('[data-previous-operand]');
 const currentOperandTextEl = document.querySelector('[data-current-operand]');
@@ -210,8 +215,12 @@ const powerButton = calculatorBodySwitchSpanElement;
 console.log();
 
 
+//calculator object
 const calculator = new Calculator(previousOperandTextEl,currentOperandTextEl)
 
+/*selecting all the buttons and adding event listener 'on' click 
+, when when the button is clicked it will display the number that is inside 
+the button, then it will update the calculator display screen user click on the number button*/
 numberButtons.forEach(button => {
   button.addEventListener('click', () =>{
     calculator.appendNumber(button.innerText)
