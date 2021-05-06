@@ -254,12 +254,16 @@ class Calculator{
 
   //this function update the values inside the calculator screen
   updateDisplay(){
-    this.currentOperandTextEl.innerHTML = this.currentOperand
+    this.currentOperandTextEl.innerText = this.currentOperand
     //the current operand becomes previous operand after operation been clicked
-    this.previousOperandTextEl.innerHTML = this.previousOperand
-
+    if(this.operation != null){
+      this.previousOperandTextEl.innerText = 
+      //concatenation of both our previous operand here
+      //string that has the operation appended tp the end of it
+      `${this.previousOperand} ${this.operation}` 
+       }
+    
   }
-
 
 }
 
