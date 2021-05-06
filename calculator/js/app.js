@@ -261,6 +261,9 @@ class Calculator{
       //concatenation of both our previous operand here
       //string that has the operation appended tp the end of it
       `${this.previousOperand} ${this.operation}` 
+       } else{
+         //clears preveious operant at the top of the calculator screen
+         this.previousOperandTextEl.innerText = ''
        }
     
   }
