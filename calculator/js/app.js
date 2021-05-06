@@ -179,7 +179,7 @@ class Calculator{
   }
 
   //clear button function
-  clear(){
+  clear() {
     this.currentOperand = ''
     this.previousOperand = ''
     this.operation = undefined
@@ -298,6 +298,18 @@ equalButton.addEventListener('click', button => {
   calculator.calculate()
   calculator.updateDisplay()
 })
+
+// CE and AC buttons clear the calculator screen
+clearButtons.forEach(button =>{
+  button.addEventListener('click', button =>{
+    calculator.clear()
+    calculator.updateDisplay()
+  })
+})
+
+
+
+
 
 
 
