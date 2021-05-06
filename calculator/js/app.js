@@ -313,7 +313,7 @@ clearButtons.forEach(button =>{
   })
 })
 
-// = button calculate the numbers total value and displays the screen
+// delete button deletes the last digit value of the sum
 deleteButton.addEventListener('click', button => {
   calculator.delete()
   calculator.updateDisplay()
