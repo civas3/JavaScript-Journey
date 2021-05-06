@@ -185,6 +185,12 @@ class Calculator{
     this.operation = undefined
   }
 
+  //delete number function
+  delete(){
+    //take the last value from the string and chop it off with slice method. 
+    this.currentOperand = this.currentOperand.toString().slice(0, -1)
+  }
+
   /*everytime user click on the number it appears on the calculator screen
   also if statement makes sure that period can be allowed only once on the screen*/
   appendNumber(number){
@@ -305,6 +311,12 @@ clearButtons.forEach(button =>{
     calculator.clear()
     calculator.updateDisplay()
   })
+})
+
+// = button calculate the numbers total value and displays the screen
+deleteButton.addEventListener('click', button => {
+  calculator.delete()
+  calculator.updateDisplay()
 })
 
 
