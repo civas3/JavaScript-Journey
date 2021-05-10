@@ -170,6 +170,9 @@ buttonNumber.forEach((el) => {
 
 //calculator class 
 class Calculator{
+
+
+
   //takes all the inputs for ir as well as all functions for calculator
   //placing our display text for calculator
   constructor(previousOperandTextEl, currentOperandTextEl){
@@ -250,21 +253,39 @@ class Calculator{
   }
 
   
+  getDisplayNumber(number) {
+    const stringNumber = number.toString()
+    const integerDigits = parseFloat(stringNumber.split('.')[0])
+    const decimalDigits = stringNumber.split('.')[1]
+    let integerDisplay
+    if (isNaN(integerDigits)){
+      integerDisplay = ''
+    }else{
+      integerDisplay = integerDigits.toLocaleString('en', {
+        maximumFractionDigits: 0 })
+    }
+    if (decimalDigits != null) {
+      return `${integerDisplay}. ${decimalDigits}`
+    }else{
+      return integerDisplay
+    }
+  }
 
 
   //this function update the values inside the calculator screen
   updateDisplay(){
-    this.currentOperandTextEl.innerText = this.currentOperand
+    this.currentOperandTextEl.innerText = 
+    this.getDisplayNumber(this.currentOperand)
     //the current operand becomes previous operand after operation been clicked
     if(this.operation != null){
       this.previousOperandTextEl.innerText = 
       //concatenation of both our previous operand here
       //string that has the operation appended tp the end of it
-      `${this.previousOperand} ${this.operation}` 
+      `${this.getDisplayNumber(this.previousOperand)} ${this.operation}` 
        } else{
          //clears preveious operant at the top of the calculator screen
          this.previousOperandTextEl.innerText = ''
-       }
+       } 
     
   }
 
@@ -281,12 +302,22 @@ const equalButton = document.querySelector('[data-equals]');
 const deleteButton = document.querySelector('[data-delete]');
 const clearButtons = document.querySelectorAll('[data-all-clear]');
 const powerButton = calculatorBodySwitchSpanElement;
+const powerSwitch = calculatorBodySwitchInputElement;
 
 console.log();
 
 
+
+
 //calculator object
 const calculator = new Calculator(previousOperandTextEl,currentOperandTextEl)
+
+
+powerSwitch.addEventListener('click', () =>{
+  calculatorScreen.classList.toggle('screen-bg-color');
+}
+)
+
 
 /*selecting all the buttons and adding event listener 'on' click 
 , when when the button is clicked it will display the number that is inside 
@@ -321,7 +352,7 @@ clearButtons.forEach(button =>{
 })
 
 // delete button deletes the last digit value of the sum
-deleteButton.addEventListener('click', button => {
+deleteButton.addEventListener('click', () => {
   calculator.delete()
   calculator.updateDisplay()
 })
@@ -333,5 +364,4 @@ deleteButton.addEventListener('click', button => {
 
 
 
-
-
+//calcultor ref https://www.youtube.com/watch?v=j59qQ7YWLxw&t=1291s

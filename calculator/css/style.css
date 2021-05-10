@@ -161,3 +161,6 @@ html {
         flex: 0 46%; }
         #calculator .calculator-footer__button--double button {
           width: 95%; }
+          .screen-bg-color{
+            background-color: black !important;
+          }
