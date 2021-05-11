@@ -37,3 +37,27 @@ const findCards = cards.filter(card => card.symbol ==='7' ).map(card => {
 })
 cardsContainerFind.innerHTML = findCards.join('\n');
 
+
+//.FOREACH METHOD == DO not creates a new array -> simply calls a provided function on each element in your array.
+
+// let card = cards.map(function(cardItem){
+//     return '<div class="card">'  +
+//     '<span>' + cardItem.symbol  + '<span>' +
+//             '</div>';
+// });
+
+//cardsContainer.innerHTML = card.join('\n');
+
+
+
+// let cards = cardsContainer.children;
+// for (i = 0; i < cards.length; i++) {
+//   if (cards[i].innerText.trim() === "color: red") {
+//     console.log("Found it")
+//     cards[i].classList.add("red");
+//   }
+// }
+
+// .children Property gets a collection of the node (element)
+// .trim() method used to remove whitespace from both sides of a string:
+
