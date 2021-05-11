@@ -25,6 +25,19 @@ console.log([5, 4, 3, 2, 1].join(""));
 // }
 //   console.log(reverseNumber(54321));
  
-//ARROW FUNCTION
+// //ARROW FUNCTION
 const reverseNumber = num => (num.toString().split("").reverse().join(""));
 console.log(reverseNumber(54321));
+
+
+let textAreaEl = document.querySelector('#text-area');
+let submitButtonEl = document.querySelector('#output-button');
+let outputAreaEl = document.querySelector('#output');
+
+
+submitButtonEl.addEventListener("click", () => {
+    textAreaValue = reverseNumber(textAreaEl.value)  
+    outputAreaEl.textContent=textAreaValue;
+});
+
+//button on click output the value of the textarea inside new div but before that use function to sort the value
