@@ -1,0 +1,113 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+//variables
+$color-primary-gray: #e0e4d6;
+$color-primary-light-gray: #f2f2f2;
+$color-primary-red: #ff1111;
+$color-primary-white: white;
+$color-primary-dark-gray: #8f8787;
+
+html {
+  font-size: 10px;
+  //10px = 1rem
+  background-color: $color-primary-white;
+}
+
+body {
+  min-height: 100vh;
+  font-size: 1.7rem;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen,
+    Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+}
+
+.section {
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+
+  &-header {
+    font-size: 2.3rem;
+    color: $color-primary-red;
+    text-shadow: black 0.2rem 0.2rem;
+    letter-spacing: 0.1rem;
+    text-align: center;
+  }
+  &-body {
+    margin-top: 5rem;
+    background-color: $color-primary-light-gray;
+    -webkit-box-shadow: 0px 0px 15px 7px rgba(180, 155, 155, 0.75);
+    -moz-box-shadow: 0px 0px 15px 7px rgba(180, 155, 155, 0.75);
+    box-shadow: 0px 0px 15px 7px rgba(180, 155, 155, 0.75);
+    border-radius: 1rem;
+    padding: 0.6rem;
+    overflow: hidden;
+    transition: 0.5s;
+    &:hover{
+        -webkit-box-shadow: 0px 0px 15px 12px rgba(180, 155, 155, 0.75);
+        -moz-box-shadow: 0px 0px 15px 12px rgba(180, 155, 155, 0.75);
+        box-shadow: 0px 0px 15px 12px rgba(180, 155, 155, 0.75);
+    
+    }
+    form {
+      display: flex;
+      flex-direction: column;
+      min-height: 40rem;
+      width: 28rem;
+      label {
+        background-color: $color-primary-gray;
+        text-align: center;
+        padding: 2rem;
+        word-spacing: 0.2rem;
+        margin-bottom: 0.4rem;
+        font-weight: 500;
+      }
+      textarea {
+        border: none;
+        font-size: 2rem;
+        text-align: center;
+        padding: 2rem 0;
+      }
+      input {
+        background-color: $color-primary-dark-gray;
+        border: none;
+        padding: 0.8rem 0;
+        width: 50%;
+        margin-left: auto;
+        margin-right: auto;
+        margin-top: 1.5rem;
+        -webkit-box-shadow: 1px 2px 5px 0px rgba(0, 0, 0, 0.75);
+        -moz-box-shadow: 1px 2px 5px 0px rgba(0, 0, 0, 0.75);
+        box-shadow: 1px 2px 5px 0px rgba(0, 0, 0, 0.75);
+        font-weight: bold;
+        font-size: 2rem;
+        color: #f2f2f2;
+        text-shadow: black 0.1rem 0.1rem;
+        transition: 0.5s;
+
+        &:hover {
+          -webkit-box-shadow: 1px 2px 6px 2px rgba(0, 0, 0, 0.75);
+          -moz-box-shadow: 1px 2px 6px 2px rgba(0, 0, 0, 0.75);
+          box-shadow: 1px 2px 6px 2px rgba(0, 0, 0, 0.75);
+        }
+      }
+      #output {
+        color: #ff1111;
+        width: 100%;
+        text-shadow: black 0.1rem 0.1rem;
+        margin-top: 2rem;
+        font-size: 4rem;
+        padding: 1rem 0;
+        text-align: center;
+        font-weight: bold;
+        letter-spacing: 0.1rem;
+        overflow-wrap: break-word;
+      }
+    }
+  }
+}
